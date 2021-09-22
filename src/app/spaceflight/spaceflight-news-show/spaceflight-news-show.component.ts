@@ -12,6 +12,10 @@ export class SpaceflightNewsShowComponent implements OnInit {
   constructor(private newsService: SpaceflightNewsService) {}
 
   ngOnInit(): void {
+    this.getSpaceflightNews();
+  }
+
+  getSpaceflightNews() {
     this.newsService.getSpaceFlightNews().subscribe((news) => {
       this.articles = news;
       console.log(news);
